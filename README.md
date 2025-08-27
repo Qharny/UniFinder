@@ -1,50 +1,194 @@
-# Welcome to your Expo app 👋
+# UniFinder 🎓
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A React Native mobile app that allows users to search, explore, and save information about universities worldwide using the Hipolabs University API.
 
-## Get started
+## ✨ Features
 
-1. Install dependencies
+### 🔍 Search Universities
+- Search universities by country name
+- Real-time results from the Hipolabs University API
+- Beautiful, scrollable list of universities
+- Country selector with bottom sheet
 
-   ```bash
-   npm install
-   ```
+### 🏫 University Details
+- Comprehensive university information
+- View university name, website, domain, and location
+- Tap website links to open in browser
+- Add/remove from favorites
 
-2. Start the app
+### ⭐ Favorites
+- Mark universities as favorites with star button
+- Stored locally using AsyncStorage for offline access
+- Dedicated favorites screen
+- Quick access to saved universities
 
-   ```bash
-   npx expo start
-   ```
+### 🎨 Modern UI/UX
+- Dark/Light theme support
+- Smooth animations and transitions
+- Intuitive navigation
+- Responsive design
 
-In the output, you'll find options to open the app in a
+## 🚀 Getting Started
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
+- Expo CLI
+- iOS Simulator or Android Emulator (optional)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Installation
 
-## Get a fresh project
-
-When you're ready, run:
-
+1. Clone the repository:
 ```bash
-npm run reset-project
+git clone <repository-url>
+cd UniFinder
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Install dependencies:
+```bash
+npm install
+```
 
-## Learn more
+3. Start the development server:
+```bash
+npm start
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+4. Run on your preferred platform:
+```bash
+# iOS
+npm run ios
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+# Android
+npm run android
 
-## Join the community
+# Web
+npm run web
+```
 
-Join our community of developers creating universal apps.
+## 📱 Screens
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### Search Screen
+- Country selector dropdown
+- Search button with loading state
+- University cards with key information
+- Error handling and empty states
+
+### Favorites Screen
+- List of saved universities
+- Remove from favorites functionality
+- Empty state with helpful message
+
+### University Details Screen
+- Comprehensive university information
+- Website links
+- Domain information
+- Add/remove from favorites
+
+### Settings Screen
+- App information
+- Data source attribution
+- Feature descriptions
+- Theme information
+
+## 🛠️ Tech Stack
+
+- **React Native** - Mobile app framework
+- **Expo** - Development platform
+- **TypeScript** - Type safety
+- **Expo Router** - File-based routing
+- **AsyncStorage** - Local data persistence
+- **Hipolabs University API** - University data
+- **React Native Bottom Sheet** - Country selector
+- **Expo Vector Icons** - Icon library
+
+## 📊 API Integration
+
+The app uses the [Hipolabs University API](http://universities.hipolabs.com) to fetch university data:
+
+```typescript
+// Example API response
+{
+  "domains": ["univ-lome.tg"],
+  "web_pages": ["http://www.univ-lome.tg/"],
+  "name": "Université de Lomé",
+  "country": "Togo",
+  "alpha_two_code": "TG",
+  "state-province": null
+}
+```
+
+## 🎯 Core Functionality
+
+### University Search
+- Search by country name
+- Real-time API calls
+- Error handling
+- Loading states
+
+### Favorites Management
+- Add/remove universities
+- Local storage persistence
+- Offline access
+- Sync across app
+
+### Navigation
+- Tab-based navigation
+- Stack navigation for details
+- Smooth transitions
+- Back navigation
+
+## 🔧 Configuration
+
+### Environment Setup
+The app is configured to work with the Hipolabs University API out of the box. No additional API keys are required.
+
+### Theme Support
+- Automatic dark/light mode detection
+- System theme integration
+- Consistent color scheme
+
+## 📦 Project Structure
+
+```
+UniFinder/
+├── app/                    # App screens and navigation
+│   ├── (tabs)/            # Tab screens
+│   │   ├── index.tsx      # Search screen
+│   │   ├── explore.tsx    # Favorites screen
+│   │   └── settings.tsx   # Settings screen
+│   ├── university-details.tsx  # University details
+│   └── _layout.tsx        # Root layout
+├── components/            # Reusable components
+│   ├── UniversityCard.tsx
+│   └── CountrySelector.tsx
+├── services/             # API and data services
+│   ├── universityApi.ts
+│   └── favoritesService.ts
+├── types/               # TypeScript types
+│   └── university.ts
+└── constants/           # App constants
+    └── countries.ts
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 🙏 Acknowledgments
+
+- [Hipolabs](http://universities.hipolabs.com) for providing the University API
+- [Expo](https://expo.dev) for the amazing development platform
+- [React Native](https://reactnative.dev) community
+
+---
+
+Made with ❤️ for students worldwide
